@@ -1,0 +1,18 @@
+RewriteEngine on
+
+RewriteRule ^(\w+)$ $1.php [NC,L]
+
+# Donje pravilo je samo za grupu (index|contact|registration)
+# RewriteRule ^(index|contact|registration)$ $1.php [NC,L]
+
+# Rule for post.php
+RewriteRule ^(\d+)-(.+)$ post.php?p_id=$1&p_title=$2 [NC,L]
+
+# Rule for category.php
+RewriteRule ^category/(\d+)-(.+)$ category.php?category=$1&cat_title=$2 [NC,L]
+
+# Rule for pagination
+RewriteRule ^page-(\d)$ index.php?page=$1 [NC,L]
+
+# Rule for author_posts.php
+RewriteRule ^author-(.+)$ author_posts.php?author=$1 [NC,L]
